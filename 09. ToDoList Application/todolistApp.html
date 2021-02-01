@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TODO List</title>
+    </head>
+    <style>
+        .taskDone{
+            text-decoration: line-through;
+        }
+    </style>
+    <body>
+        <ul id="obj">
+            <input type="text" v-model='newTask'>
+            <button @click="tasks.push({todo: newTask, done: false})">Thêm</button>
+            <li v-for="task in tasks" :key=>
+                <input type="checkbox" v-model="task.done">
+                <span :class="{taskDone: task.done}">{{ task.todo }}</span>
+            </li>
+        </ul>
+
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+
+    <script>
+        var Property = {
+            data() {
+                return{
+                    newTask : '',
+                    tasks: [
+                        {todo: 'Đi chợ', done: false},
+                        {todo: 'Giặt đồ', done: false},
+                        {todo: 'Nấu cơm', done: false},
+                        {todo: 'Đi ngủ', done: false},
+                    ]
+                }
+            }
+        };
+        Vue.createApp(Property).mount('#obj')
+    </script>
+</html>

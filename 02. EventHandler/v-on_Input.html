@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>On Input</title>
+    </head>
+    <body>
+        <div id="obj">
+            <input type="text" v-on:input="changeValue">
+            <p>{{ noidung }}</p>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+
+    <script>
+        const EventHandle = {
+            data() {
+                return{
+                    noidung : 'Hello World',
+                }
+            },
+            methods: {
+                changeValue(event){
+                    this.noidung = event.target.value
+                    //using this because VueJS create and management object in DOM
+                    //this.noidung => data of Object of VueJS
+                }
+            },
+        };
+
+        Vue.createApp(EventHandle).mount('#obj')
+    </script>
+</html>

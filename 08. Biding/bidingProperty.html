@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Binding</title>
+    </head>
+    <style>
+        .taskDone{
+            text-decoration: line-through;
+        }
+    </style>
+    <body>
+        <div id="obj">
+            <div :id="bindingID">Đây là thẻ div được bingding ID</div>
+            <div :class="{taskDone: bindingClass}">Đây là thẻ div được bingding CLASS</div>
+            <div :data-key="bindingProperty">Đây là thẻ div được bingding PROPERTY</div>
+            <hr>
+
+            <div :style="styleObject">Binding STYLE</div>
+        </div>
+
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+
+    <script>
+        var Property = {
+            data() {
+                return{
+                   bindingID: "IDNAME",
+                   bindingClass: true,
+                   bindingProperty: "DataKEY",
+                   styleObject: {
+                        color: 'red',
+                        fontSize: '50px'
+                    }
+                }
+            }
+        };
+        Vue.createApp(Property).mount('#obj')
+    </script>
+</html>

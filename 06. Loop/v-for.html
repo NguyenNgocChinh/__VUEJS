@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>For</title>
+    </head>
+    <body>
+        <ul id="obj">
+
+            <li v-for="post in posts">
+                {{ post.text }}
+            </li>
+        </ul>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+
+    <script>
+        var Property = {
+            data() {
+                return{
+                    show : false,
+                    posts: [
+                        {text: 'Hello', index: 1},
+                        {text: 'World', index: 2},
+                        {text: 'I am a goodBoy', index: 3},
+                        {text: 'I am a banana', index: 4},
+                    ]
+                }
+            },
+        };
+        Vue.createApp(Property).mount('#obj')
+    </script>
+</html>

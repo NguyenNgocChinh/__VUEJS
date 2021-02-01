@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mounted</title>
+    </head>
+    <body>
+        <div id="obj">
+            <p>{{ time }}</p>
+            <button v-on:click="pause">{{ status }}</button>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+
+    <script>
+        const EventHandle = {
+            data() {
+                return{
+                    time: 0,
+                    timeout: null,
+                    status : 'Pause',
+                }
+            },
+            methods: {
+                pause(){
+                    if(this.timeout){
+                        clearInterval(this.timeout);
+                        this.timeout = null;
+                        this.status = 'Continue';
+                    }else{
+                        this.timeout = setInterval(()=>{
+                            this.time++;
+                        },1000);
+                        this.status = 'Pause'
+                    }
+                }
+            },
+            mounted() {
+                this.timeout = setInterval(()=>{
+                    this.time++;
+                },1000);
+            },
+        };
+
+        Vue.createApp(EventHandle).mount('#obj')
+    </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>On Click</title>
+    </head>
+    <body>
+        <div id="obj">
+
+            <p>{{ noidung }}</p>
+            <button v-on:click="revString">Reverse</button>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+
+    <script>
+        const EventHandle = {
+            data() {
+                return{
+                    noidung : 'Nguyễn Ngọc Chinh',
+                }
+            },
+            methods: {
+                revString(){
+                    this.noidung = this.noidung.split(' ').reverse().join(' ');
+                    //using this because VueJS create and management object in DOM
+                    //this.noidung => data of Object of VueJS
+                }
+            },
+        };
+
+        Vue.createApp(EventHandle).mount('#obj')
+    </script>
+</html>

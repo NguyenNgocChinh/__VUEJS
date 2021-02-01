@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Two Way Biding</title>
+    </head>
+    <body>
+        <div id="obj">
+            <input type="text" v-model="noidung">
+            <!-- Sử dụng v-model để chỉ định model thay đổi trong data của đối tượng VUEJS quản lý  -->
+            <p>{{ noidung }}</p>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+
+    <script>
+        var Biding = {
+            data() {
+                return{
+                    noidung : 'Hello World',
+                }
+            },
+        };
+        Vue.createApp(Biding).mount('#obj')
+    </script>
+</html>

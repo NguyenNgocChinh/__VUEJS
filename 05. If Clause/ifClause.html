@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IF ELSE</title>
+    </head>
+    <body>
+        <div id="obj">
+            <p v-if="show">{{ noidung }}</p>
+            <p v-else="!show">ABC</p>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+
+    <script>
+        var Property = {
+            data() {
+                return{
+                    show : false,
+                    noidung: "Show is true"
+                }
+            },
+        };
+        Vue.createApp(Property).mount('#obj')
+    </script>
+</html>

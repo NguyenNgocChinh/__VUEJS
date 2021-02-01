@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Print Text To Screen</title>
+    </head>
+    <body>
+        <div id="obj">
+            <p>{{ noidung }}</p>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+
+    <script>
+        const Text ={
+           data() {
+               return {
+                   noidung: 'Hello World',
+               }
+           },
+        };
+
+        Vue.createApp(Text).mount('#obj')
+    </script>
+</html>
