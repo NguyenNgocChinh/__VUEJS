@@ -12,7 +12,7 @@
         1. Watch
 
 ## Install Requirement
-    1. Install (NodeJS)[https://nodejs.org/dist/v14.15.4/node-v14.15.4-x64.msi] to using `npm`.
+    1. Install [NodeJS](https://nodejs.org/dist/v14.15.4/node-v14.15.4-x64.msi) to using `npm`.
     1. Run `npm install -g @vue/cli` to install Vue CLI to global.
     1. Run `vue create <name-project>` to create project VueJS.
     1. Run `cd <name-project> to jump folder includes Vue.
